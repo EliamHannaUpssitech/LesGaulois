@@ -1,5 +1,6 @@
 package test_fonctionnel;
 
+import personnages.Druide;
 import personnages.Gaulois;
 import personnages.Grade;
 import personnages.Soldat;
@@ -12,9 +13,7 @@ public class TestSites {
 		Soldat minus = new Soldat("Minus", 2, Grade.CENTURION);
 		
 		Village village = new Village(vercingetorix);
-		vercingetorix.parler("Je suis un grand guerrier et je vais créer mon village.");
 		Camp camp = new Camp(minus);
-		minus.parler("Je suis en charge de créer un nouveau camp romain.");
 		
 		Gaulois agecanonix = new Gaulois("Agecanonix", 1);
 		Gaulois assurancetourix = new Gaulois("Assurancetourix", 2);
@@ -38,6 +37,7 @@ public class TestSites {
 		camp.ajouterSoldat(tulliusOctopus);
 		camp.ajouterSoldat(ballondebaudrus);
 		
+		/*
 		village.afficherVillageois();
 		camp.afficherCamp();
 		
@@ -46,5 +46,12 @@ public class TestSites {
 		
 		village.afficherVillageois();
 		camp.afficherCamp();
+		*/
+		
+		Druide panoramix = new Druide("Panoramix", 1);
+		village.ajouterVillageois(panoramix);
+		
+		panoramix.fabriquePotion();
+		
 	}
 }
