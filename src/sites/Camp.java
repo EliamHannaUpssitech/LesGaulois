@@ -1,5 +1,6 @@
 package sites;
 
+import personnages.Grade;
 import personnages.Soldat;
 
 public class Camp {
@@ -21,6 +22,19 @@ public class Camp {
 		if (nombreSoldat < 80) {
 			listeSoldat[nombreSoldat] = soldat;
 			nombreSoldat++;
+		}
+	}
+	
+	public void afficherCamp() {
+		System.out.println("Le camp dirigé par " + getCommandant() + " contient les soldats :");
+		for(int i=0; i<nombreSoldat; i++) {
+			System.out.println("- " + listeSoldat[i].getNom());
+		}
+	}
+	
+	public void changerCommandant(Soldat soldat) {
+		if(soldat.getGrade() == Grade.CENTURION) {
+			this.commandant = soldat;
 		}
 	}
 }

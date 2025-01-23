@@ -38,5 +38,13 @@ public class TestSites {
 		camp.ajouterSoldat(tulliusOctopus);
 		camp.ajouterSoldat(ballondebaudrus);
 		
+		village.afficherVillageois();
+		camp.afficherCamp();
+		
+		village.changerChef(agecanonix);
+		camp.changerCommandant(brutus);
+		
+		village.afficherVillageois();
+		camp.afficherCamp();
 	}
 }

@@ -23,4 +23,15 @@ public class Village {
 			nombreGaulois++;
 		}
 	}
+	
+	public void afficherVillageois() {
+		System.out.println("Le village de " + getChef() + " est habité par :");
+		for(int i=0; i<nombreGaulois; i++) {
+			System.out.println("- " + listeGaulois[i].getNom());
+		}
+	}
+	
+	public void changerChef(Gaulois gaulois) {
+		this.chef = gaulois;
+	}
 }
