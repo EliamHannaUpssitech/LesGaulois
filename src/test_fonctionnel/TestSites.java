@@ -48,10 +48,15 @@ public class TestSites {
 		camp.afficherCamp();
 		*/
 		
+		System.out.println(" ");
+		
 		Druide panoramix = new Druide("Panoramix", 1);
 		village.ajouterVillageois(panoramix);
 		
-		panoramix.fabriquePotion();
+		panoramix.fabriquePotion(2, 6);
+		
+		panoramix.booster(asterix);
+		asterix.frapper(minus);
 		
 	}
 }

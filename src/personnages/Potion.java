@@ -16,4 +16,8 @@ public class Potion {
 	public int getForcePotion() {
 		return forcePotion;
 	}
+	
+	public void gauloisBooste() {
+		quantitePotion--;
+	}
 }
