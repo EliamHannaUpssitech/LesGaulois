@@ -3,6 +3,8 @@ package test_fonctionnel;
 import personnages.Druide;
 import personnages.Gaulois;
 import personnages.Grade;
+import personnages.Potion;
+import personnages.Protection;
 import personnages.Soldat;
 import sites.Village;
 import sites.Camp;
@@ -10,14 +12,14 @@ import sites.Camp;
 public class TestSites {
 	public static void main(String[] args) {
 		Gaulois vercingetorix = new Gaulois("Vercingétorix", 5);
-		Soldat minus = new Soldat("Minus", 2, Grade.CENTURION);
+		Soldat minus = new Soldat("Minus", 7, Grade.CENTURION);
 		
 		Village village = new Village(vercingetorix);
 		Camp camp = new Camp(minus);
 		
 		Gaulois agecanonix = new Gaulois("Agecanonix", 1);
 		Gaulois assurancetourix = new Gaulois("Assurancetourix", 2);
-		Gaulois asterix = new Gaulois("Astérix", 5);
+		Gaulois asterix = new Gaulois("Astérix", 6);
 		Gaulois obelix = new Gaulois("Obelix", 15);
 		Gaulois prolix = new Gaulois("Prolix", 2);
 		
@@ -48,15 +50,24 @@ public class TestSites {
 		camp.afficherCamp();
 		*/
 		
-		System.out.println(" ");
+		System.out.println("\n");
 		
 		Druide panoramix = new Druide("Panoramix", 1);
 		village.ajouterVillageois(panoramix);
 		
-		panoramix.fabriquePotion(2, 6);
+		Potion potion = panoramix.fabriquePotion(4, 5);
+		panoramix.booster(asterix, potion);
 		
-		panoramix.booster(asterix);
-		asterix.frapper(minus);
+		minus.equipement(Protection.BOUCLIER);
+		minus.equipement(Protection.CASQUE);
+		minus.equipement(Protection.PLASTRON);
+		
+		while(asterix.getForce() > 0 && minus.getForce() > 0) {
+			asterix.frapper(minus);
+			if(minus.getForce() > 0) {
+				minus.frapper(asterix);
+			}
+		}
 		
 	}
 }
