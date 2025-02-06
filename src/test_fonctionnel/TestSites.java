@@ -11,7 +11,7 @@ import sites.Camp;
 
 public class TestSites {
 	public static void main(String[] args) {
-		Gaulois vercingetorix = new Gaulois("Vercingétorix", 5);
+		Gaulois vercingetorix = new Gaulois("VercingÃ©torix", 5);
 		Soldat minus = new Soldat("Minus", 7, Grade.CENTURION);
 		
 		Village village = new Village(vercingetorix);
@@ -19,7 +19,7 @@ public class TestSites {
 		
 		Gaulois agecanonix = new Gaulois("Agecanonix", 1);
 		Gaulois assurancetourix = new Gaulois("Assurancetourix", 2);
-		Gaulois asterix = new Gaulois("Astérix", 6);
+		Gaulois asterix = new Gaulois("AstÃ©rix", 6);
 		Gaulois obelix = new Gaulois("Obelix", 15);
 		Gaulois prolix = new Gaulois("Prolix", 2);
 		
