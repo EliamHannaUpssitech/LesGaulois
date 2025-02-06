@@ -6,13 +6,14 @@ import personnages.Grade;
 import personnages.Potion;
 import personnages.Protection;
 import personnages.Soldat;
+import personnages.Bataille;
 import sites.Village;
 import sites.Camp;
 
 public class TestSites {
 	public static void main(String[] args) {
 		Gaulois vercingetorix = new Gaulois("Vercingétorix", 5);
-		Soldat minus = new Soldat("Minus", 7, Grade.CENTURION);
+		Soldat minus = new Soldat("Minus", 4, Grade.CENTURION);
 		
 		Village village = new Village(vercingetorix);
 		Camp camp = new Camp(minus);
@@ -55,7 +56,7 @@ public class TestSites {
 		Druide panoramix = new Druide("Panoramix", 1);
 		village.ajouterVillageois(panoramix);
 		
-		Potion potion = panoramix.fabriquePotion(4, 5);
+		Potion potion = panoramix.fabriquePotion(2, 3);
 		panoramix.booster(asterix, potion);
 		
 		minus.equipement(Protection.BOUCLIER);
@@ -68,6 +69,8 @@ public class TestSites {
 				minus.frapper(asterix);
 			}
 		}
+		
+		// Bataille chef = new Bataille();
 		
 	}
 }
